@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs')%>  
+<main>
+
+    <div class="bg-dark">
+        <ul class="nav nav-pills justify-content-left py-3 mb-4 border-top border-warning">
+            <li class="nav-item"><a href="events.html" class="nav-link text-white ml-1">Events</a></li>
+        </ul>
+    </div>
+
+    <div class="p-3 mr-4 ml-4 align-items-center mx-auto sections">
+        <div class="float-left mr-4">
+            <h3>UNCC Events</h3>
+            <%if(events.length) {%>
+                <%events.forEach(event=>{%>
+                    <li class="nav-item"><a href="events/<%= event.id%>"><%= event.title%></a></li>
+                <%});
+            } else {%>
+                <p>There are no events to display!</p>
+            <%}%> 
+        </div>
+        <div class="float-right ml-4">
+            <h3>Spectrum Center Events</h3>
+            <ul class="nav-pills mt-3 mr-4">
+                <li class="nav-item"><a href="#">JAN 26 | HORNETS VS BULLS 7:30 pm</a></li>
+                <li class="nav-item"><a href="#">JAN 29 | HORNETS VS HEAT 1:00 pm</a></li>
+                <li class="nav-item"><a href="#">JAN 31 | HORNETS VS BUCKS 8:00 pm</a></li>
+            </ul>
+        </div>
+    </div>
+
+</main>
+<%- include('../partials/footer.ejs')%>  
